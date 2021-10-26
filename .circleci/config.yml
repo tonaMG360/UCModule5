@@ -3,9 +3,12 @@ jobs:
   build:
     docker:
       - image: circleci/python3.7
-  working_directory: ~/UCModule5
-  steps:
+    
+    working_directory: ~/UCModule5
+
+    steps:
     - checkout
+
     - run:
         name: install dependencies 
         command: |
