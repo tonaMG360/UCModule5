@@ -1,5 +1,9 @@
-## Reference software Calculator in PY
-## Module 5 TMG
+"""
+
+Calculator library containing basic math operations.
+
+"""
+
 
 def add(num1, num2):
     return num1+num2
