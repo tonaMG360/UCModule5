@@ -9,23 +9,24 @@ jobs:
   working_directory: ~/UCModule5
   
   steps:
-    -checkout 
-
+    #1 Obtain repo from Github
+    - checkout
+#2 Create a virtual enviroment and install dependencies
     -run:
       name: install dependencies
       command: |
       python3 -m venv venv
       - venc/bin/active
       pip install -r requirements.txt
-#3 Run coding convention soft and the tester 
-  - run:
-    name: run tests
-    command: |
-    - venc/bin/active
-    flake8 --exclude-env* --statistics
-    pytest --junixml-test-results/junit.xml
-  - store_test_results:
-      path: test-results
-      
-  - store_artifacts:
-    path: test-results
+    
+    #3 Run coding convention software plus tester.
+    -run:
+      name: run tests
+      command: |
+      - venc/bin/active
+      flake8 --exclude-env* --statistics
+      pytest --junixml-test-results/junit.xml
+    - store_test_results:
+        path: test-results
+    - store_artifacts:
+        path: test-results
