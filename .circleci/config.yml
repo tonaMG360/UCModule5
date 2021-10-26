@@ -10,19 +10,19 @@ jobs:
   steps:
   - checkout
   - run:
-    name: install dependencies
-    command: |
-    python3 -m venv venv
-    - venc/bin/active
-    pip install -r requirements.txt
+      name: install dependencies
+      command: |
+      python3 -m venv venv
+      - venv/bin/active
+      pip install -r requirements.txt
   #3 Run coding convention soft and the tester 
   - run:
-  name: run tests
-  command: |
-  - venc/bin/active
-  flake8 --exclude-env* --statistics
-  pytest --junixml-test-results/junit.xml
+    name: run tests
+    command: |
+    - venc/bin/active
+    flake8 --exclude-env* --statistics
+    pytest --junixml-test-results/junit.xml
   - store_test_results:
-  path: test-results      
+      path: test-results      
   - store_artifacts:
-  path: test-results
+      path: test-results
