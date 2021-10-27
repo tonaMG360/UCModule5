@@ -8,7 +8,7 @@ jobs:
 
     working_directory: ~/UCModule5
 
-    steps:
+    steps: 
       - checkout
       - run:
           name: install dependencies
